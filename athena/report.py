@@ -1,6 +1,8 @@
 from __future__ import annotations
-from jinja2 import Template
+
 from pathlib import Path
+
+from jinja2 import Template
 
 TEMPLATE = Template("""
 <!doctype html>
@@ -18,7 +20,10 @@ TEMPLATE = Template("""
 </body></html>
 """)
 
+
 def write_report(path: str, rows, em, f1, rl, model_name: str):
-    html = TEMPLATE.render(rows=rows, em=em, f1=f1, rl=rl, n=len(rows), model_name=model_name)
+    html = TEMPLATE.render(
+        rows=rows, em=em, f1=f1, rl=rl, n=len(rows), model_name=model_name
+    )
     Path(path).write_text(html, encoding="utf-8")
     return path
