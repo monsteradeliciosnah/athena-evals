@@ -4,7 +4,8 @@ from pathlib import Path
 
 from jinja2 import Template
 
-TEMPLATE = Template("""
+TEMPLATE = Template(
+    """
 <!doctype html>
 <html><head><meta charset="utf-8"><title>Athena Evals</title>
 <style>body{font-family:system-ui;margin:20px} table{border-collapse:collapse;width:100%} td,th{border:1px solid #ddd;padding:8px}</style>
@@ -18,7 +19,8 @@ TEMPLATE = Template("""
 {% endfor %}
 </tbody></table>
 </body></html>
-""")
+"""
+)
 
 
 def write_report(path: str, rows, em, f1, rl, model_name: str):
